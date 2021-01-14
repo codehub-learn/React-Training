@@ -8,7 +8,6 @@ const TodoApp = ({ initialTodos }) => {
   const updateInput = (e) => {
     setToDoInput(e.target.value);
   };
-
   const addTodo = (e) => {
     e.preventDefault();
     const newTodo = {
@@ -18,6 +17,12 @@ const TodoApp = ({ initialTodos }) => {
 
     setTodos([...todos, newTodo]);
     setToDoInput("");
+  };
+
+  const toggleDone = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].done = !newTodos[index].done;
+    setTodos(newTodos);
   };
 
   return (
@@ -31,7 +36,12 @@ const TodoApp = ({ initialTodos }) => {
       </form>
       <ul>
         {todos.map((todo, index) => (
-          <TodoItem key={todo.title} {...todo} index={index} />
+          <TodoItem
+            key={todo.title}
+            {...todo}
+            index={index}
+            toggleDone={toggleDone}
+          />
         ))}
       </ul>
     </div>
