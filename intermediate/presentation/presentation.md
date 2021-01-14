@@ -252,7 +252,7 @@ Replace the hard-coded todos with server data, using this [endpoint](https://api
 # Recap
 
 - create react app
-- hooks
+- hooks and custom hooks
 - forms and events
 
 ---
