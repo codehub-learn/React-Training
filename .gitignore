@@ -3,6 +3,8 @@
 intermediate/workshop/hooks-events-forms/src/examples/custom-hooks/solution
 intermediate/workshop/todo-app/src/TodoApp-solution.js
 intermediate/workshop/todo-app/src/components/TodoItem-solution.js
+# redux
+redux/workshop/src/examples/solution1/*
 # testing
 testing/workshop/src/examples/01/wordCount-solution.js
 testing/workshop/src/examples/02/isLeap-solution.js
