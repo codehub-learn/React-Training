@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from "../constants/todosTypes";
+import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from "../constants/todosTypes";
 
 const initialState = [
   {
@@ -22,6 +22,8 @@ const initialState = [
 export default (state = initialState, action) => {
   const { type, payload } = action;
 
+  console.log(action);
+
   switch (type) {
     case ADD_TODO:
       return [...state, payload];
@@ -34,6 +36,13 @@ export default (state = initialState, action) => {
       });
 
       return [...newState];
+    case DELETE_TODO:
+      const newTodos = state.filter((todo) => {
+        if (todo.id === payload) return false;
+        return true;
+      });
+
+      return newTodos;
     default:
       return state;
   }

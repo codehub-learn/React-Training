@@ -15,6 +15,7 @@ export default function TodoItem({ id, title, done }) {
         />
         &nbsp;
         {done ? <strike>{title}</strike> : <span>{title}</span>}
+        <button>delete</button>
       </label>
     </li>
   );

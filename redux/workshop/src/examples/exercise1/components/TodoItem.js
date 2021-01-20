@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { toggleTodo } from "../actions/todosActions";
+import { toggleTodo, deleteTodo } from "../actions/todosActions";
 
 export default function TodoItem({ id, title, done }) {
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ export default function TodoItem({ id, title, done }) {
         />
         &nbsp;
         {done ? <strike>{title}</strike> : <span>{title}</span>}
+        <button onClick={() => dispatch(deleteTodo(id))}>delete</button>
       </label>
     </li>
   );
